@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
-import Weather from '../Weather';
+
 import { WeatherContext } from '../context/WeatherContext';
+import Weather from '../Weather';
 
 const customRender = (ui, { providerProps, ...renderOptions }) => {
     return render(
@@ -15,7 +16,7 @@ describe('Weather', () => {
             value: {
                 forecast: {
                     city: {
-                        name: 'Vancouver'
+                        name: 'Tokyo'
                     },
                     list: [{
                         weather: [{

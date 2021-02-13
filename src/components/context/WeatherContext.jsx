@@ -1,15 +1,20 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, {
+  createContext,
+  useEffect,
+  useState,
+} from 'react';
+
 import axios from 'axios';
 
 export const WeatherContext = createContext();
 
-const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+const API_KEY = process.env.REACT_APP_OWM_KEY;
 
 export const WeatherProvider = (props) => {
     const [forecast, setForecast] = useState([]);
     const [city, setCity] = useState('');
     const [url, setUrl] = useState(
-        `https://api.openweathermap.org/data/2.5/forecast?q=vancouver&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=tokyo&appid=${API_KEY}`
     );
     const [isError, setIsError] = useState(false);
 

@@ -1,7 +1,18 @@
 import React from 'react';
-import { render, screen, fireEvent, act, cleanup } from '@testing-library/react';
+
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from '@testing-library/react';
+
+import {
+  WeatherContext,
+  WeatherProvider,
+} from '../context/WeatherContext';
 import SearchField from '../SearchField';
-import { WeatherProvider, WeatherContext } from '../context/WeatherContext';
 
 describe('SearchField', () => {
 
@@ -22,7 +33,7 @@ describe('SearchField', () => {
         expect(screen.getByRole('textbox')).toBeInTheDocument();
         expect(screen.getByRole('button')).toBeInTheDocument();
 
-        fireEvent.change(screen.getByRole('textbox'), { target: { value: 'Vancouver' } });
+        fireEvent.change(screen.getByRole('textbox'), { target: { value: 'Tokyo' } });
         fireEvent.click(screen.getByRole('button'));
 
         expect(mockSubmit).toHaveBeenCalledTimes(3);

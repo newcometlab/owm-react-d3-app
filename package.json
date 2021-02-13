@@ -1,6 +1,5 @@
 {
-  "homepage": "https://arisa-hirata.github.io/weather-app",
-  "name": "react-weather-app",
+  "name": "owm-react-d3-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
